@@ -1,4 +1,5 @@
 import type React from 'react';
+import type { MutableRefObject } from 'react';
 import { useCallback, useEffect } from 'react';
 import type { SharedValue } from 'react-native-reanimated';
 import type { SCROLLABLE_TYPE } from '../constants';
@@ -10,6 +11,7 @@ export const useScrollableSetter = (
   ref: React.RefObject<Scrollable>,
   type: SCROLLABLE_TYPE,
   contentOffsetY: SharedValue<number>,
+  lastContentHeightRef: MutableRefObject<number | undefined>,
   refreshable: boolean,
   useFocusHook = useEffect
 ) => {
@@ -17,6 +19,7 @@ export const useScrollableSetter = (
   const {
     animatedScrollableType,
     animatedScrollableContentOffsetY: rootScrollableContentOffsetY,
+    animatedContentHeight,
     isContentHeightFixed,
     isScrollableRefreshable,
     setScrollableRef,
@@ -30,6 +33,10 @@ export const useScrollableSetter = (
     animatedScrollableType.value = type;
     isScrollableRefreshable.value = refreshable;
     isContentHeightFixed.value = false;
+
+    if (lastContentHeightRef.current !== undefined) {
+      animatedContentHeight.value = lastContentHeightRef.current;
+    }
 
     // set current scrollable ref
     const id = findNodeHandle(ref.current);
@@ -50,8 +57,10 @@ export const useScrollableSetter = (
     type,
     refreshable,
     animatedScrollableType,
+    animatedContentHeight,
     rootScrollableContentOffsetY,
     contentOffsetY,
+    lastContentHeightRef,
     isScrollableRefreshable,
     isContentHeightFixed,
     setScrollableRef,
