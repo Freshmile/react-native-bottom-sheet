@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useCallback, useMemo } from 'react';
+import React, { memo, useEffect, useCallback, useMemo, useRef } from 'react';
 import { type LayoutChangeEvent, View } from 'react-native';
 import { SCROLLABLE_TYPE } from '../../constants';
 import {
@@ -17,6 +17,8 @@ function BottomSheetViewComponent({
   children,
   ...rest
 }: BottomSheetViewProps) {
+  const lastLayoutRef = useRef<LayoutChangeEvent['nativeEvent']['layout']>();
+
   //#region hooks
   const {
     animatedScrollableContentOffsetY,
@@ -41,10 +43,19 @@ function BottomSheetViewComponent({
   const handleSettingScrollable = useCallback(() => {
     animatedScrollableContentOffsetY.value = 0;
     animatedScrollableType.value = SCROLLABLE_TYPE.VIEW;
-  }, [animatedScrollableContentOffsetY, animatedScrollableType]);
+    if (enableDynamicSizing && lastLayoutRef.current) {
+      animatedContentHeight.value = lastLayoutRef.current.height;
+    }
+  }, [
+    animatedScrollableContentOffsetY,
+    animatedScrollableType,
+    animatedContentHeight,
+    enableDynamicSizing,
+  ]);
   const handleLayout = useCallback(
     (event: LayoutChangeEvent) => {
       if (enableDynamicSizing) {
+        lastLayoutRef.current = event.nativeEvent.layout;
         animatedContentHeight.set(event.nativeEvent.layout.height);
       }
 
