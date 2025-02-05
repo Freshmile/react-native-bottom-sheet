@@ -3,6 +3,7 @@ import React, {
   useContext,
   useImperativeHandle,
   useMemo,
+  useRef,
 } from 'react';
 import { Gesture } from 'react-native-gesture-handler';
 import { useAnimatedProps, useAnimatedStyle } from 'react-native-reanimated';
@@ -95,11 +96,14 @@ export function createBottomSheetScrollableComponent<T, P>(
           : undefined,
       [draggableGesture]
     );
+
+    const lastContentHeightRef = useRef<number>();
     //#endregion
 
     //#region callbacks
     const handleContentSizeChange = useStableCallback(
       (contentWidth: number, contentHeight: number) => {
+        lastContentHeightRef.current = contentHeight;
         setContentSize(contentHeight);
 
         if (onContentSizeChange) {
@@ -135,6 +139,7 @@ export function createBottomSheetScrollableComponent<T, P>(
       scrollableRef,
       type,
       scrollableContentOffsetY,
+      lastContentHeightRef,
       onRefresh !== undefined,
       focusHook
     );
