@@ -20,6 +20,7 @@
   ],
   "repository": "https://github.com/Freshmile/react-native-bottom-sheet",
   "author": "Freshmile (prev. Mo Gorhom)",
+  "private": true,
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Freshmile/react-native-bottom-sheet/issues"
