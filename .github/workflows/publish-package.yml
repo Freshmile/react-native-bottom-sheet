@@ -24,4 +24,4 @@ jobs:
         with:
           bun-version: 1.2.14
       - run: bun install --frozen-lockfile
-      - run: bun publish
+      - run: bun publish --registry https://npm.pkg.github.com/ --access restricted
