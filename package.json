@@ -1,6 +1,6 @@
 {
   "name": "@freshmile/bottom-sheet",
-  "version": "5.1.5-freshmile.1",
+  "version": "5.1.5-freshmile.2",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

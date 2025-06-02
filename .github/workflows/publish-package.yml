@@ -6,7 +6,7 @@ on:
       - 'v*-freshmile*'
 
 env:
-  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  NPM_CONFIG_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 jobs:
   publish:
@@ -24,4 +24,4 @@ jobs:
         with:
           bun-version: 1.2.14
       - run: bun install --frozen-lockfile
-      - run: bun publish --dry-run
+      - run: bun publish
