@@ -1,6 +1,6 @@
 {
-  "name": "@gorhom/bottom-sheet",
-  "version": "5.1.5",
+  "name": "@freshmile/bottom-sheet",
+  "version": "5.1.5-freshmile.1",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -18,23 +18,21 @@
     "reanimated",
     "sheet"
   ],
-  "repository": "https://github.com/gorhom/react-native-bottom-sheet",
-  "author": "Mo Gorhom (https://gorhom.dev)",
+  "repository": "https://github.com/Freshmile/react-native-bottom-sheet",
+  "author": "Freshmile (prev. Mo Gorhom)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gorhom/react-native-bottom-sheet/issues"
+    "url": "https://github.com/Freshmile/react-native-bottom-sheet/issues"
   },
   "homepage": "https://gorhom.dev/react-native-bottom-sheet/",
   "scripts": {
     "typescript": "tsc --skipLibCheck --noEmit",
     "lint": "biome lint --error-on-warnings ./src",
-    "build": "bob build && yarn copy-dts && yarn delete-dts.js && yarn delete-debug-view",
+    "build": "bob build && bun run copy-dts && bun run delete-dts.js && bun run delete-debug-view",
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "delete-debug-view": "rm -r ./lib/commonjs/components/bottomSheetDebugView && rm -r ./lib/module/components/bottomSheetDebugView && rm -r ./lib/typescript/components/bottomSheetDebugView",
     "delete-dts.js": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete",
-    "release": "rm -rf lib && yarn build && release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn install && yarn example"
+    "release": "rm -rf lib && bun run build"
   },
   "dependencies": {
     "@gorhom/portal": "1.0.14",
@@ -80,5 +78,9 @@
     "source": "src",
     "output": "lib",
     "targets": ["commonjs", "module", "typescript"]
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   }
 }
