@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.14](https://github.com/gorhom/react-native-bottom-sheet/compare/v5.2.13...v5.2.14) (2026-05-09)
+
+### 🐛 Bug Fixes
+
+* allow mount animation alongside keyboard during initial open ([#2661](https://github.com/gorhom/react-native-bottom-sheet/issues/2661)) ([#2665](https://github.com/gorhom/react-native-bottom-sheet/issues/2665))(by [@huextrat](https://github.com/huextrat)) ([782e00c](https://github.com/gorhom/react-native-bottom-sheet/commit/782e00c959257bbf440dd44455a712f73fdba46d)), closes [#2655](https://github.com/gorhom/react-native-bottom-sheet/issues/2655)
+* read window height from a shared value on ui thread ([5853f11](https://github.com/gorhom/react-native-bottom-sheet/commit/5853f1177555219be72ff90bd974b3a50899cebd))
+
 ## [5.2.13](https://github.com/gorhom/react-native-bottom-sheet/compare/v5.2.12...v5.2.13) (2026-04-30)
 
 ### 🐛 Bug Fixes
