@@ -301,6 +301,13 @@ export type ContainerLayoutState = {
  */
 export type LayoutState = {
   /**
+   * Getting latest window layout on a shared value
+   */
+  window: {
+    height: number;
+    width: number;
+  };
+  /**
    * The original height of the container before any adjustments.
    */
   rawContainerHeight: number;
