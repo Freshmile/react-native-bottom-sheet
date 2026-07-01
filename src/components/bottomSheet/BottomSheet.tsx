@@ -607,10 +607,6 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
           return;
         }
 
-        if (position === animatedPosition.get()) {
-          return;
-        }
-
         // early exit if there is a running animation to
         // the same position
         const { status: animationStatus, nextPosition } =
@@ -625,6 +621,10 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
         // stop animation if it is running
         if (animationStatus === ANIMATION_STATUS.RUNNING) {
           stopAnimation();
+        }
+
+        if (position === animatedPosition.get()) {
+          return;
         }
 
         /**
