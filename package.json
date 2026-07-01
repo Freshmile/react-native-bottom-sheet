@@ -54,6 +54,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^13.2.2",
     "metro-react-native-babel-preset": "^0.77.0",
+    "parse-path": "^7.1.0",
     "react": "18.3.1",
     "react-native": "0.76.0",
     "react-native-builder-bob": "^0.30.3",
