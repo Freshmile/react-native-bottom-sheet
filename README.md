@@ -1,10 +1,9 @@
 # React Native Bottom Sheet
 
-[![Reanimated v3 version](https://img.shields.io/github/package-json/v/gorhom/react-native-bottom-sheet/master?label=Reanimated%20v3&style=flat-square)](https://www.npmjs.com/package/@gorhom/bottom-sheet) [![Reanimated v2 version](https://img.shields.io/github/package-json/v/gorhom/react-native-bottom-sheet/v4?label=Reanimated%20v2&style=flat-square)](https://www.npmjs.com/package/@gorhom/bottom-sheet)  [![Reanimated v1 version](https://img.shields.io/github/package-json/v/gorhom/react-native-bottom-sheet/v2?label=Reanimated%20v1&style=flat-square)](https://www.npmjs.com/package/@gorhom/bottom-sheet)<br>
-[![license](https://img.shields.io/npm/l/@gorhom/bottom-sheet?style=flat-square)](https://www.npmjs.com/package/@gorhom/bottom-sheet) [![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://www.npmjs.com/package/@gorhom/bottom-sheet) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/) <br> ![NPM Downloads](https://img.shields.io/npm/dw/%40gorhom%2Fbottom-sheet?style=flat-square)
+[![Reanimated v3 version](https://img.shields.io/github/package-json/v/Freshmile/react-native-bottom-sheet/master?label=Reanimated%20v3&style=flat-square)](https://github.com/orgs/Freshmile/packages?repo_name=react-native-bottom-sheet)<br>
+[![license](https://img.shields.io/npm/l/@gorhom/bottom-sheet?style=flat-square)](https://github.com/Freshmile/react-native-bottom-sheet/blob/master/LICENSE) [![github](https://img.shields.io/badge/types-included-blue?style=flat-square)](https://github.com/Freshmile/react-native-bottom-sheet) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/) <br>
 
-
-A performant interactive bottom sheet with fully configurable options 🚀
+**This is a fork of the original [gorhom/react-native-bottom-sheet](https://github.com/gorhom/react-native-bottom-sheet).** A performant interactive bottom sheet with fully configurable options 🚀
 
 ![React Native Bottom Sheet](./preview.gif)
 
@@ -28,7 +27,8 @@ A performant interactive bottom sheet with fully configurable options 🚀
 
 ## Getting Started
 
-Check out [the documentation website](https://gorhom.dev/react-native-bottom-sheet).
+This is a fork of the original [gorhom/react-native-bottom-sheet](https://github.com/gorhom/react-native-bottom-sheet).
+Check out the [original documentation website](https://gorhom.dev/react-native-bottom-sheet). But keep in mind it might not reflect the changes made by this fork.
 
 ## Versioning
 
@@ -45,22 +45,8 @@ This library been written in 3 versions of `Reanimated`, and kept all implementa
 ## Author
 
 - [Mo Gorhom](https://gorhom.dev/)
-
-## Sponsor & Support
-
-To keep this library maintained and up-to-date please consider [sponsoring it on GitHub](https://github.com/sponsors/gorhom). Or if you are looking for a private support or help in customizing the experience, then reach out to me on Twitter [@gorhom](https://twitter.com/gorhom).
+- Freshmile
 
 ## License
 
 [MIT](./LICENSE)
-
----
-
-<p align="center">
-  <a href="https://gorhom.dev/#gh-light-mode-only" target="_blank">
-    <img height="18" alt="Mo Gorhom" src="./mogorhom-light.png">
-  </a>
-  <a href="https://gorhom.dev/#gh-dark-mode-only" target="_blank">
-    <img height="18" alt="Mo Gorhom" src="./mogorhom-dark.png">
-  </a>
-</p>
