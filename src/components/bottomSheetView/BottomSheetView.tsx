@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useMemo } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef } from 'react';
 import { type LayoutChangeEvent, View } from 'react-native';
 import { SCROLLABLE_TYPE } from '../../constants';
 import {
@@ -17,6 +17,8 @@ function BottomSheetViewComponent({
   children,
   ...rest
 }: BottomSheetViewProps) {
+  const lastLayoutHeightRef = useRef<number>();
+
   //#region hooks
   const { animatedScrollableState, enableDynamicSizing, animatedLayoutState } =
     useBottomSheetInternal();
@@ -40,7 +42,16 @@ function BottomSheetViewComponent({
       contentOffsetY: 0,
       type: SCROLLABLE_TYPE.VIEW,
     }));
-  }, [animatedScrollableState]);
+
+    const lastLayoutHeight = lastLayoutHeightRef.current;
+
+    if (enableDynamicSizing && lastLayoutHeight) {
+      animatedLayoutState.set(state => ({
+        ...state,
+        contentHeight: lastLayoutHeight,
+      }));
+    }
+  }, [animatedScrollableState, enableDynamicSizing, animatedLayoutState]);
   const handleLayout = useCallback(
     (event: LayoutChangeEvent) => {
       if (enableDynamicSizing) {
@@ -49,6 +60,7 @@ function BottomSheetViewComponent({
             layout: { height },
           },
         } = event;
+        lastLayoutHeightRef.current = height;
         animatedLayoutState.modify(state => {
           'worklet';
           state.contentHeight = height;
